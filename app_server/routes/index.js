@@ -5,19 +5,15 @@ var router = express.Router();
 const maincontroller = require('../controllers/maincontroller')
 
 // GET home page
-router.get('/', function(req, res, next) {
-  // res.render('index', { title: 'Express'});
-  res.send('halo')
-});
+router.get('/', maincontroller.index);
 
 // GET about page
 router.get('/about', maincontroller.about);
 
 // GET contact page
-router.get('/contact', function(req, res, next) {
-  res.render('contact',{title: "Contact us", layout: "main"});
+  router.get('/contact', function(req, res, next) {
+    res.render('contact',{title: "Contact us", layout: "main"});
 });
-
 
 //GET prodi page
 router.get('/prodi', function(req, res, next) {

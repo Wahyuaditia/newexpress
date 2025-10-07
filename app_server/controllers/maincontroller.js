@@ -1,6 +1,10 @@
 const index = (req,res) =>{
-    res.render('index', {title: 'express',layout:'main'
-    });
+    res.render('index', {title: 'express',layout:'main'});
+
+}
+
+
+
     const about= (req,res) =>{
         res.render('about',{title: "About us", layout: "main"});
     }
@@ -10,5 +14,4 @@ const index = (req,res) =>{
         res.render('contact', {title:"contact"})
     }
 
-    module.exports = {index}
-}
+    module.exports = {index, about,contact}
