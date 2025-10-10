@@ -7,6 +7,10 @@ var expressLayout = require('express-ejs-layouts');//impor
 const connectDB = require('./app_api/models/db')
 connectDB();
 
+// route app_api
+const fakultasRouterAPI = require("./app_api/routes/fakultas")
+
+//route app_derver
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 
@@ -27,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api/fakultas', fakultasRouterAPI);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
