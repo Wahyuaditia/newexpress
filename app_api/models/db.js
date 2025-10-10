@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
 
-const connetDB = async () => {
+const connectDB = async () => {
     try {
-        await mongoose.connect();
-        "mongodb+srv://Wahyuaditia:wahyu280205@cluster0.rjw28qt.mongodb.net/SI5PAW2?retryWrites=true&w=majority&appName=Cluster0"
+        await mongoose.connect(
+        "mongodb+srv://Wahyuaditia:wahyu280205@cluster0.rjw28qt.mongodb.net/SI5PAW2?retryWrites=true&w=majority&appName=Cluster0");
         console.log("MongoDB connected.");
     } catch (error) {
         console.error("error : ",error);
@@ -11,4 +11,4 @@ const connetDB = async () => {
     }
 }
 
-module.exports = mongoose.connectDB;
+module.exports = connectDB;
